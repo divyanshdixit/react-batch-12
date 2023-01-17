@@ -1,7 +1,7 @@
 // 
 import React, { useState } from 'react'
 
-const HOC = (OriginalComponent, {children}) => {
+const HOC = (OriginalComponent) => {
     
     const NewComponent = () => {
         
@@ -13,8 +13,6 @@ const HOC = (OriginalComponent, {children}) => {
         }
         return(
             <>
-            {children}
-            
             <OriginalComponent prop1="someprop" count={counter} incrementFunction={handleCounter}/>
             </>
         )
