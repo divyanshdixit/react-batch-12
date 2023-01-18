@@ -13,16 +13,18 @@ import LeaveCounter from './components/LeaveCounter';
 import ClickCounter from './components/ClickCounter';
 import FetchApi from './components/FetchApi';
 import Counter from './components/Counter';
+import UseCallbackHook from './components/UseCallbackHook';
 
 function App() {
   return (
     <div className="App">
       <Refs/>
       <Counter/>
+      <UseCallbackHook/>
       {/* <uContext.Provider value="niksds">
         <Basic/>
         <IfElseComponent/>
-        <Forms/>
+        
         <Heading/>
       </uContext.Provider> 
         <Parent/>
@@ -32,11 +34,14 @@ function App() {
       <HOC> 
         hiiihih
       </HOC>
-      <HoverCounter/>
-      <LeaveCounter/>
-      <ClickCounter/>
+      
+      
   */}
   {/* <FetchApi/> */}
+  <Forms/>
+  <HoverCounter/>
+  <LeaveCounter/>
+      <ClickCounter/>
     </div>
   );
 }

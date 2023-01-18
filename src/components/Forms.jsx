@@ -6,7 +6,8 @@ const Forms = () => {
     const [name, setName] = useState("divyansh");// initial value
     const [email, setEmail] = useState("dd@gmail.com");// initial value
 
-    const [detail, setDetail] = useState({name:"divyansh", email:"dd"})
+    const [detail, setDetail] = useState({fname:"", email:""});
+
 
     const changeName = (e) => {
         setName(e.target.value)
@@ -16,21 +17,24 @@ const Forms = () => {
     }
 
     const changeDetail = (e) => {
-        console.log(e)
+        console.log(e, e.target.value, e.target.name)
         setDetail( (prev) => {
             return {
-                ...prev, // name:"divyansh", email:"dd", unmae:'d', email:'ddt'
+                ...prev, // fname:"", email:"", fname:'divyansh', email:'ddt'
                 [e.target.name] : e.target.value
             }
         })
     }
 
+    const submitValue = () => {
+        console.log(detail);
+    }
     return (
         <>
             <h1> Hello </h1>
-            <input type="text" name="name" placeholder="name" value={detail.name} onChange={changeDetail}/>
+            <input type="text" name="fname" placeholder="name" value={detail.fname} onChange={changeDetail}/>
             <input type="text" name="email" placeholder="email" value={detail.email} onChange={changeDetail}/>
-            <button type="button"> Submit </button>
+            <button type="button" onClick={submitValue}> Submit </button>
         </>
     )
 }

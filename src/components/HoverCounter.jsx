@@ -1,7 +1,7 @@
 import React from 'react'
 import HOC from './HOC';
 
-function ClickCounter({count, incrementFunction, children}) {
+function HoverCounter({count, incrementFunction, children}) {
 //    use HOC props in this component.
 
   return (
@@ -12,4 +12,4 @@ function ClickCounter({count, incrementFunction, children}) {
   )
 }
 
-export default HOC(ClickCounter)
+export default HOC(HoverCounter)
