@@ -1,5 +1,5 @@
 import React from 'react'
-import HOC from './HOC';
+import HOCcomponent from './HOC';
 
 function ClickCounter({count, incrementFunction}) {
     // const [counter, setCounter] = useState(0);
@@ -11,4 +11,4 @@ function ClickCounter({count, incrementFunction}) {
   )
 }
 
-export default HOC(ClickCounter)
+export default HOCcomponent(ClickCounter)

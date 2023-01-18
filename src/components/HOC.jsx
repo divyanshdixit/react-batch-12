@@ -1,7 +1,8 @@
-// 
+// HOC take a component as a parameter, and return an enhanced version (with logic written in HOC) of given component.
+
 import React, { useState } from 'react'
 
-const HOC = (OriginalComponent) => {
+const HOCcomponent = (OriginalComponent) => {
     
     const NewComponent = () => {
         
@@ -17,7 +18,25 @@ const HOC = (OriginalComponent) => {
             </>
         )
     }
+
     return NewComponent;
 }
 
-export default HOC
+// clouser function: js => self invoke function 
+
+/*
+const f1 = (() => {})()
+
+*/
+
+const fun1 = () => {
+
+    const fun2 = () => {
+        return 20;
+    }
+
+    return fun2;
+}
+
+fun1(); // fun2
+export default HOCcomponent

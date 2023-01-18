@@ -7,7 +7,7 @@ function HoverCounter({count, incrementFunction, children}) {
   return (
     <div>
         {children}
-        <h1 onMouseOver={incrementFunction}> Heading {count} </h1>
+        <h1 onMouseOver={incrementFunction}> Mouse over Heading {count} </h1>
     </div>
   )
 }

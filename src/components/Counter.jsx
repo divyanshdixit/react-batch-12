@@ -1,6 +1,6 @@
 import React, { useState, useMemo} from 'react'
 
-const Counter = () => {
+const Counter = ({children}) => {
     const [counter, setCounter] = useState(0);
     const [counter1, setCounter1] = useState(0);
     const [isEven, setIsEven] = useState(false);
@@ -25,6 +25,7 @@ const Counter = () => {
 
   return (
     <>
+    {children}
         <h1> counter - {counter}</h1>
         <h2> {counterMemo ? 'Odd' : 'Even'}</h2>
         <button type='button' onClick={() => setCounter(counter+1)}> Counter Button </button>
