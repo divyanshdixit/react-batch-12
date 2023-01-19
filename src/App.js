@@ -18,9 +18,10 @@ import UseCallbackHook from './components/UseCallbackHook';
 function App() {
   return (
     <div className="App">
-      <Refs/>
-      <Counter/>
       <UseCallbackHook/>
+      {/* <Refs/>
+      <Counter/>
+       */}
       {/* <uContext.Provider value="niksds">
         <Basic/>
         <IfElseComponent/>
@@ -38,10 +39,11 @@ function App() {
       
   */}
   {/* <FetchApi/> */}
-  <Forms/>
+  {/* <Forms/>
   <HoverCounter/>
   <LeaveCounter/>
-      <ClickCounter/>
+      <ClickCounter/> */}
+      {/* suspense */}
     </div>
   );
 }

@@ -10,7 +10,7 @@ function Basic() {
     }
   return (
     <div className='' contentEditable style={styles}> 
-        Basic {Head.g} {Head.i}
+        {/* Basic {Head.g} {Head.i} */}
         {/* <Heading title="Heading content" msg=''/>  */}
         <Head.default title="Heading content" msg=''/>
         <Para title="Para content"/>

@@ -6,6 +6,9 @@
 // inputref.current.focus()
 // event.target.attribites
 import React, {useRef} from 'react'
+import Input from './Input';
+
+const ff = React.forwardRef(() => {});
 
 function Refs() {
   
@@ -17,10 +20,11 @@ function Refs() {
 
   return (
     <>
-        <input type="text" ref={inputRef}/>
-        <button type="button" ref={buttonRef} onClick={() => {console.log(inputRef); inputRef.current.focus()}}>Click </button> 
+        
+        <Input type="text" ref={inputRef} placeholder={'placeholder'} />
+        {/* <button type="button" ref={buttonRef} onClick={() => {console.log(inputRef); inputRef.current.focus()}}>Click </button>  */}
     </>
   )
 }
 
-export default Refs
+export default React.forwardRef(Refs)

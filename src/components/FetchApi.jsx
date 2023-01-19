@@ -9,7 +9,7 @@ function FetchApi() {
     // JSON.parse()
 
     // useEffect(() => {
-    //     fetch('https://jsonplaceholder.typicode.com/posts')// retunr a promise
+    //     fetch('https://jsonplaceholder.typicode.com/posts', {method:POST, body:JSON.stringify(obj)} )// retunr a promise
     //         .then((res) => {
     //             // success
     //             res.json() // return promise

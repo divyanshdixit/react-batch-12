@@ -1,17 +1,12 @@
 import React from 'react'
 
-function Heading({title, msg}) {
+function Heading({title, text}) {
+    console.log('Heading', title)
     // const {title, msg} = props; // object destructuring 
   return (
     <>
-        <div>{title}</div>
-        <div>{msg}</div>
+        <h1> {title} - {text}</h1>
     </>
   )
 }
-const g = 10;
-const h = 11;
-const i = 12;
-
-export default Heading
-export {g,h,i};
+export default React.memo(Heading)
