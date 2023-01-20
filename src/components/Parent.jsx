@@ -20,8 +20,8 @@ function Parent() {
       <>
       <div>Parent {uname.name}</div>
       <uContext.Provider value={uname}>
+        
         <uContext1.Provider value={getChildValue}>
-
         {/* all components in this tree will have access to the  uContext. 
         to use the Context in a child component, we need to access it using the useContext Hook
         */}

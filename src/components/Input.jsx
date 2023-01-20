@@ -1,13 +1,13 @@
 import React from 'react'
-import { useRef } from 'react'
 
-const Input = ({type, placeholder}) => {
-    const inputRef = useRef();
-  return (
-    <>
-        <input type={type} ref={inputRef}/>
-    </>
-  )
-}
+const Input = React.forwardRef((props, ref) => {
+    return (
+        <>
+        <input type="text" ref={ref}/>
+        <h1></h1>
+        <button></button>
+      </>
+    )
+  })
 
 export default Input

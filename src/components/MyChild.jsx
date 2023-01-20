@@ -11,8 +11,8 @@ function MyChild({parentFunction}) {
 
   return (
     <div>
-        <h1 onClick={() => setValue('new child value')}> MyChild component </h1>
-        {/* <button type='button' onClick={() => parentFunction(value)}> Clcik me </button> */}
+        {/* <h1 onClick={() => setValue('new child value')}> MyChild component </h1> */}
+        <button type='button' onClick={() => {setValue('new child value')}}> Clcik me </button>
     </div>
   )
 }
