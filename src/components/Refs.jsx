@@ -46,7 +46,8 @@ function Refs() {
     // console.log(clickFun)
   return (
     <>
-        <Input ref={inputRef}/>
+        <Input name={`fname`}type='text' ref={inputRef}/>
+
         
         {/* <button type="button" ref={buttonRef} onClick={() => {inputRef.current = 20; console.log(inputRef)}}>Click </button>  */}
     </>

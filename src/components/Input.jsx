@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Input = React.forwardRef((props, ref) => {
+const Input = React.forwardRef(({name, type}, ref) => {
     return (
         <>
-        <input type="text" ref={ref}/>
+        <input name={name} type={type} ref={ref}/>
         <h1></h1>
         <button></button>
       </>
