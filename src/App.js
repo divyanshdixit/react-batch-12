@@ -3,7 +3,7 @@ import Basic from "./components/Basic";
 import IfElseComponent from "./components/IfElseComponent";
 import Forms from "./components/Forms";
 import Heading from "./components/Heading";
-// import Restraunt from './components/Restraunt';
+import Restraunt from './components/Restraunt';
 import Parent, { uContext } from "./components/Parent";
 import Refs from "./components/Refs";
 import MyParent from "./components/MyParent";
@@ -19,6 +19,9 @@ import About from "./route-components/About";
 import ErrorNotFound from "./route-components/ErrorNotFound";
 import Navbar from "./route-components/Navbar";
 import Category from "./components/Category";
+import Products from "./route-components/Products";
+import FeaturedProducts from "./route-components/FeaturedProducts";
+import NewProducts from "./route-components/NewProducts";
 
 function App() {
   return (
@@ -29,9 +32,13 @@ function App() {
       <Routes>
         <Route path="/" element={<MyParent />} />
         <Route path="about" element={<About /> } />
-        <Route path="services" element={<Service/>}>
-          <Route path="/:category" element={<Category/>}/>
-        </Route>
+        <Route path="products" element={<Products />} >
+          {/* it share the path of parent route  */}
+          <Route index element={<FeaturedProducts /> }/>
+          <Route path="featured" element={<FeaturedProducts />}/>
+          <Route path="new" element={<NewProducts />}/>
+        </Route> 
+        {/* Dynamic routes */}
         <Route path="*" element={<ErrorNotFound/>} />
       </Routes>
     </BrowserRouter>
