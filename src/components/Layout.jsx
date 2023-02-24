@@ -1,7 +1,11 @@
 import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
+import { useAuth } from './auth';
 
 const Layout = () => {
+  const auth = useAuth();
+  console.log(auth)
+
   return (
     <>
     <div>
@@ -12,6 +16,13 @@ const Layout = () => {
         <NavLink to='/trello'> 
           <NavLink to='board'> TrelloBoard </NavLink>
         </NavLink>
+        <NavLink to='products'> Products </NavLink>
+        <NavLink to='profile'> Profile </NavLink>
+        {
+          !auth.user && (
+            <NavLink to='login'> Login </NavLink>
+          )
+        }
         
     </div>
 

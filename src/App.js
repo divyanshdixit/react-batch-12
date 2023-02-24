@@ -18,12 +18,22 @@ import Layout from "./components/Layout";
 import TrelloLayout from "./components/TrelloLayout";
 import Users from "./components/Users";
 import UserAdmin from "./components/UserAdmin";
+import Products from "./components/Products";
+
+import NewProducts from "./components/NewProducts";
+import FeaturedProducts from "./components/FeaturedProducts";
+import RenderProdCategory from "./components/RenderProdCategory";
+import Profile from "./components/Profile";
+import {AuthProvider} from "./components/auth";
+import Login from "./components/Login";
 
 const LazyAboutpage = React.lazy(() => import("./components/Pages/About"));
+const ProductsLazyPage = React.lazy(() => import('./components/Products'));
 // import return the promise, which is comverted into the module that contains default exported component
 
 function App() {
   return (
+    <AuthProvider>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -36,6 +46,19 @@ function App() {
           <Route path="users/:id" element={<Users />} />
           {/* react first match for more specific route */}
           <Route path="users/admin" element={<UserAdmin />} />
+          <Route path="products" element={<React.Suspense fallback={'loading...'}>
+          <ProductsLazyPage/>
+            </React.Suspense>}>
+            {/* index route share the path of parent route  */}
+            <Route index element={<FeaturedProducts />} />
+            {/* <Route path="featured" element={<FeaturedProducts />} />
+            <Route path="new" element={<NewProducts />} /> */}
+            <Route path=":prodCategory" element={<RenderProdCategory/>} />
+          </Route>
+          <Route path="login"  element={<Login/>}/>
+          <Route path="profile" element={<AuthProvider>
+            <Profile/>
+          </AuthProvider>} />
           <Route path="trello" element={<TrelloLayout />}>
             <Route index element={<Post trello />} />
             {/* path will be /trello/category */}
@@ -50,6 +73,7 @@ function App() {
       </div> */}
       </Routes>
     </BrowserRouter>
+    </AuthProvider>
   );
 }
 
